@@ -33,6 +33,10 @@ app.get("/aboutme", (req, res) => {
   );
 });
 
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
+});
+
 // app.get("/projects", (req, res) => {
 //   res.send("This is where I have my projects!");
 // });
