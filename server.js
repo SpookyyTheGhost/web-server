@@ -3,6 +3,26 @@ import express from "express";
 const app = express();
 const PORT = 3000;
 
+app.set("view engine", "ejs");
+app.set("views", "views");
+
+app.use(express.static("public"));
+
+const events = []; //[{ title: "Career fair" }, { title: "Hackathon kickoff" }];
+
+app.get("/events", (req, res) => {
+  res.render("events", { events });
+});
+
+app.get("/entries", (req, res) => {
+  const entries = [
+    { title: "First note" },
+    { title: "Second note" },
+    { title: "Third note" },
+  ];
+  res.render("entries", { title: "My Notes", entries });
+});
+
 app.get("/", (req, res) => {
   res.send("Hello, web!");
 });
