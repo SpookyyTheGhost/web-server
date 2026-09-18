@@ -1,0 +1,15 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <ul>
+    <% if(events.length == 0){ %>
+      <%= "Something went wrong dumbass"%>
+    <% } %>
+    <% events.forEach(event => { %>
+      <li><%= event.title %></li>
+    <% }); %>
+    </ul>
+  </body>
+</html>
